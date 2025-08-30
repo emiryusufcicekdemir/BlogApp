@@ -13,11 +13,16 @@ class ArticleCard extends ConsumerWidget {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       child: ListTile(
-        title: Text(article.title),
+        title: Text(
+          article.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
         subtitle: Text(
-          article.content.length > 100
-              ? '${article.content.substring(0, 100)}...'
-              : article.content,
+          article.content.split('\n').first,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         trailing: IconButton(
           icon: const Icon(Icons.delete, color: Colors.red),

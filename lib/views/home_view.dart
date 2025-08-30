@@ -1,4 +1,3 @@
-// views/home_view.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../controllers/article_controller.dart';
