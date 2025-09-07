@@ -85,5 +85,3 @@ Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüle
 3. Uygulamayı çalıştır
 
 > flutter run
-
-⸻
