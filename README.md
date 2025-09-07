@@ -54,22 +54,20 @@ Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüle
 
 ⸻
 
-✨ Özellikler
-	•	📝 Makale oluşturma ve düzenleme
-	•	🗑️ Makale silme
-	•	👀 Makale detaylarını görüntüleme
-	•	💾 Hive ile lokal veri depolama
-	•	⚡ Riverpod ile state yönetimi
-	•	🔗 GoRouter ile sayfalar arası navigasyon
-	•	🎨 Modern & soft UI tasarımı
+### ✨ Features
+- 📝 Create and edit articles
+- 🗑️ Delete articles
+- 👀 View article details
+- 💾 Local data storage with Hive
+- ⚡ State management with Riverpod
+- 🔗 Page navigation with GoRouter
+- 🎨 Modern & soft UI design
 
-⸻
-
-🛠️ Teknoloji Yığını
-	•	Flutter
-	•	Hive (Lokal depolama)
-	•	Riverpod (State yönetimi)
-	•	GoRouter (Navigasyon)
+### 🛠️ Tech Stack
+- Flutter
+- Hive (Local storage)
+- Riverpod (State management)
+- GoRouter (Navigation)
 
 ⸻
 
