@@ -11,21 +11,21 @@ It allows users to create, edit, delete, and view articles. The app leverages Ri
 ⸻
 
 ✨ Features
-	•	📝 Create and edit articles
-	•   🗑️ Delete articles
-	•	👀 View article details
-	•	💾 Local data storage with Hive
-	•	⚡ State management with Riverpod
-	•	🔗 Page navigation with GoRouter
-	•	🎨 Modern & soft UI design
+	•📝 Create and edit articles
+	•🗑️ Delete articles
+	•👀 View article details
+	•💾 Local data storage with Hive
+	•⚡ State management with Riverpod
+	•🔗 Page navigation with GoRouter
+	•🎨 Modern & soft UI design
 
 ⸻
 
 🛠️ Tech Stack
-	•	Flutter
-	•	Hive (Local storage)
-	•	Riverpod (State management)
-	•	GoRouter (Navigation)
+	•Flutter
+	•Hive (Local storage)
+	•Riverpod (State management)
+	•GoRouter (Navigation)
 
 ⸻
 
