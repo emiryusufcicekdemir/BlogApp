@@ -1,13 +1,93 @@
-# Flutter Blog Uygulaması
 
-Bu proje, Flutter ve Hive kullanılarak geliştirilmiş basit bir blog uygulamasıdır. Uygulama, makaleleri oluşturma, düzenleme, silme ve görüntüleme işlemlerini destekler. Riverpod kullanılarak state yönetimi sağlanmıştır ve GoRouter ile sayfalar arasında navigasyon yapılmaktadır.
+# 📖 Flutter Blog App
 
-## Özellikler
+## 🇬🇧 English
 
-- Makale oluşturma ve düzenleme
-- Makale silme
-- Makale detaylarını görüntüleme
-- Hive ile lokal veri depolama
-- Riverpod ile state yönetimi
-- GoRouter ile sayfalar arası navigasyon
-- Modern ve soft UI tasarımı
+### Overview
+
+This project is a simple Blog Application built with Flutter and Hive.
+It allows users to create, edit, delete, and view articles. The app leverages Riverpod for state management and GoRouter for navigation between pages. With its modern and soft UI design, it provides a clean and user-friendly blogging experience.
+
+⸻
+
+ ✨ Features
+	•	📝 Create and edit articles
+	•	🗑️ Delete articles
+	•	👀 View article details
+	•	💾 Local data storage with Hive
+	•	⚡ State management with Riverpod
+	•	🔗 Page navigation with GoRouter
+	•	🎨 Modern & soft UI design
+
+⸻
+
+🛠️ Tech Stack
+	•	Flutter
+	•	Hive (Local storage)
+	•	Riverpod (State management)
+	•	GoRouter (Navigation)
+
+⸻
+
+### Getting Started
+
+1️⃣ Clone the repository
+
+git clone https://github.com/username/flutter_blog_app.git
+cd flutter_blog_app
+
+2️⃣ Install dependencies
+
+flutter pub get
+
+3️⃣ Run the app
+
+flutter run
+
+
+⸻
+
+## 🇹🇷 Türkçe
+
+### 📌 Genel Bakış
+
+Bu proje, Flutter ve Hive kullanılarak geliştirilmiş basit bir Blog Uygulamasıdır.
+Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüleyebilir. Uygulamada Riverpod ile state yönetimi, GoRouter ile sayfalar arası navigasyon sağlanmaktadır. Modern ve soft UI tasarımı sayesinde temiz ve kullanıcı dostu bir deneyim sunar.
+
+⸻
+
+✨ Özellikler
+	•	📝 Makale oluşturma ve düzenleme
+	•	🗑️ Makale silme
+	•	👀 Makale detaylarını görüntüleme
+	•	💾 Hive ile lokal veri depolama
+	•	⚡ Riverpod ile state yönetimi
+	•	🔗 GoRouter ile sayfalar arası navigasyon
+	•	🎨 Modern & soft UI tasarımı
+
+⸻
+
+🛠️ Teknoloji Yığını
+	•	Flutter
+	•	Hive (Lokal depolama)
+	•	Riverpod (State yönetimi)
+	•	GoRouter (Navigasyon)
+
+⸻
+
+### Başlangıç
+
+> Depoyu klonla
+
+git clone https://github.com/username/flutter_blog_app.git
+cd flutter_blog_app
+
+> Bağımlılıkları yükle
+
+flutter pub get
+
+> Uygulamayı çalıştır
+
+flutter run
+
+⸻
