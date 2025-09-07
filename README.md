@@ -31,18 +31,18 @@ It allows users to create, edit, delete, and view articles. The app leverages Ri
 
 ### Getting Started
 
-1️⃣ Clone the repository
+1. Clone the repository
 
-git clone https://github.com/username/flutter_blog_app.git
-cd flutter_blog_app
+> git clone https://github.com/username/flutter_blog_app.git
+> cd flutter_blog_app
 
-2️⃣ Install dependencies
+2. Install dependencies
 
-flutter pub get
+> flutter pub get
 
-3️⃣ Run the app
+3. Run the app
 
-flutter run
+> flutter run
 
 
 ⸻
@@ -77,17 +77,17 @@ Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüle
 
 ### Başlangıç
 
-> Depoyu klonla
+1. Depoyu klonla
 
-git clone https://github.com/username/flutter_blog_app.git
-cd flutter_blog_app
+> git clone https://github.com/username/flutter_blog_app.git
+> cd flutter_blog_app
 
-> Bağımlılıkları yükle
+2. Bağımlılıkları yükle
 
-flutter pub get
+> flutter pub get
 
-> Uygulamayı çalıştır
+3. Uygulamayı çalıştır
 
-flutter run
+> flutter run
 
 ⸻
