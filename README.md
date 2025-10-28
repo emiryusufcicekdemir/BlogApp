@@ -27,24 +27,6 @@ It allows users to create, edit, delete, and view articles. The app leverages Ri
 
 ⸻
 
-### Getting Started
-
-1. Clone the repository
-
-> git clone https://github.com/username/flutter_blog_app.git
-> cd flutter_blog_app
-
-2. Install dependencies
-
-> flutter pub get
-
-3. Run the app
-
-> flutter run
-
-
-⸻
-
 ## 🇹🇷 Türkçe
 
 ### 📌 Genel Bakış
@@ -54,34 +36,19 @@ Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüle
 
 ⸻
 
-### ✨ Features
-- 📝 Create and edit articles
-- 🗑️ Delete articles
-- 👀 View article details
-- 💾 Local data storage with Hive
-- ⚡ State management with Riverpod
-- 🔗 Page navigation with GoRouter
-- 🎨 Modern & soft UI design
+###  Özellikler
+- 📝 Makalelerini oluştur ve editle
+- 🗑️ Makale silme
+- 👀 Makalelerinin detaylarını görüntüle
+- 💾 Hive lokal veri saklama
+- ⚡ Riverpod durum yönetimi
+- 🔗 GoRouter sayfa yönlendirmesi
+- 🎨 Modern dizayn
 
-### 🛠️ Tech Stack
+### 🛠️ Tekonolojiler
 - Flutter
-- Hive (Local storage)
-- Riverpod (State management)
-- GoRouter (Navigation)
+- Hive 
+- Riverpod
+- GoRouter
 
 ⸻
-
-### Başlangıç
-
-1. Depoyu klonla
-
-> git clone https://github.com/username/flutter_blog_app.git
-> cd flutter_blog_app
-
-2. Bağımlılıkları yükle
-
-> flutter pub get
-
-3. Uygulamayı çalıştır
-
-> flutter run
