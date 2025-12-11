@@ -5,18 +5,18 @@
 
 ### Overview
 
-This project is a simple Blog Application built with Flutter and Hive.
-It allows users to create, edit, delete, and view articles. The app leverages Riverpod for state management and GoRouter for navigation between pages. With its modern and soft UI design, it provides a clean and user-friendly blogging experience.
+A lightweight and modern Blog Application built with Flutter + Hive, focusing on clean UI and smooth local data management.
+Users can create, edit, delete, sort, search, favorite, and view articles.
+State management is powered by Riverpod, and navigation uses GoRouter
 
 ⸻
 
 ### ✨ Features
 - 📝 Create and edit articles
 - 🗑️ Delete articles
-- 👀 View article details
-- 💾 Local data storage with Hive
-- ⚡ State management with Riverpod
-- 🔗 Page navigation with GoRouter
+- ⭐️ Favorite articles with star icon
+- 🔍 Search bar for live keyword filtering
+- 🧭 Advanced sorting options
 - 🎨 Modern & soft UI design
 
 ### 🛠️ Tech Stack
@@ -31,18 +31,18 @@ It allows users to create, edit, delete, and view articles. The app leverages Ri
 
 ### 📌 Genel Bakış
 
-Bu proje, Flutter ve Hive kullanılarak geliştirilmiş basit bir Blog Uygulamasıdır.
-Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir ve görüntüleyebilir. Uygulamada Riverpod ile state yönetimi, GoRouter ile sayfalar arası navigasyon sağlanmaktadır. Modern ve soft UI tasarımı sayesinde temiz ve kullanıcı dostu bir deneyim sunar.
+Flutter ve Hive kullanılarak geliştirilmiş sade ve modern bir Blog Uygulamasıdır.
+Kullanıcılar makale oluşturabilir, düzenleyebilir, silebilir, arayabilir, favorilere ekleyebilir ve sıralayabilir.
+State yönetimi Riverpod, sayfa yönlendirmesi ise GoRouter ile yapılmıştır
 
 ⸻
 
 ###  Özellikler
 - 📝 Makalelerini oluştur ve editle
 - 🗑️ Makale silme
-- 👀 Makalelerinin detaylarını görüntüle
-- 💾 Hive lokal veri saklama
-- ⚡ Riverpod durum yönetimi
-- 🔗 GoRouter sayfa yönlendirmesi
+- ⭐ Makaleleri favoriye ekleme
+- 🔍 Search bar ile anlık kelime arama
+- 🧭 Gelişmiş sıralama seçenekleri
 - 🎨 Modern dizayn
 
 ### 🛠️ Tekonolojiler
