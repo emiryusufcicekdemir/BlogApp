@@ -11,7 +11,7 @@ State management is powered by Riverpod, and navigation uses GoRouter
 
 ⸻
 
-### ✨ Features
+###  Features
 - 📝 Create and edit articles
 - 🗑️ Delete articles
 - ⭐️ Favorite articles with star icon
@@ -24,6 +24,8 @@ State management is powered by Riverpod, and navigation uses GoRouter
 - Hive (Local storage)
 - Riverpod (State management)
 - GoRouter (Navigation)
+
+### Scroll to see screenshots
 
 ⸻
 
@@ -52,3 +54,11 @@ State yönetimi Riverpod, sayfa yönlendirmesi ise GoRouter ile yapılmıştır
 - GoRouter
 
 ⸻
+
+## 📷 Screenshots
+
+<p float="left">
+  <img src="screenshots 📱/newHomePage.png" width="250" />
+  <img src="screenshots 📱/searchingOnArticles.png" width="250" />
+  <img src="screenshots 📱/fave.png" width="250" />
+</p>
