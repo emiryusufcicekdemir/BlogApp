@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../models/article_model.dart';
 
 class CreateArticleView extends ConsumerStatefulWidget {
-  final Article? article; // Düzenleme için optional
+  final Article? article;
   const CreateArticleView({super.key, this.article});
 
   @override
@@ -17,6 +17,9 @@ class _CreateArticleViewState extends ConsumerState<CreateArticleView> {
   late TextEditingController _titleController;
   late TextEditingController _contentController;
 
+  static const Color primaryColor = Colors.teal;
+  static const Color cardColor = Colors.white;
+
   @override
   void initState() {
     super.initState();
@@ -27,22 +30,40 @@ class _CreateArticleViewState extends ConsumerState<CreateArticleView> {
   }
 
   void _submit() {
-    if (_formKey.currentState!.validate()) {
-      final notifier = ref.read(articleProvider.notifier);
-      if (widget.article != null) {
-        notifier.updateArticle(
-          widget.article!.id,
-          _titleController.text.trim(),
-          _contentController.text.trim(),
-        );
-      } else {
-        notifier.addArticle(
-          _titleController.text.trim(),
-          _contentController.text.trim(),
-        );
-      }
-      context.pop();
+    // icerik kontrolu
+    if (_titleController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Makale başlığı boş bırakılamaz.'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
     }
+    if (_contentController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Makale içeriği boş bırakılamaz.'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
+    final notifier = ref.read(articleProvider.notifier);
+    if (widget.article != null) {
+      notifier.updateArticle(
+        widget.article!.id,
+        _titleController.text.trim(),
+        _contentController.text.trim(),
+      );
+    } else {
+      notifier.addArticle(
+        _titleController.text.trim(),
+        _contentController.text.trim(),
+      );
+    }
+    context.pop();
   }
 
   @override
@@ -55,88 +76,112 @@ class _CreateArticleViewState extends ConsumerState<CreateArticleView> {
   @override
   Widget build(BuildContext context) {
     final isEditing = widget.article != null;
-    final softColor = Colors.teal[300]; // Soft, gözü yormayan ton
+
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: cardColor,
       appBar: AppBar(
-        title: Text(isEditing ? 'Makale Düzenle' : 'Yeni Makale'),
-        backgroundColor: softColor,
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          elevation: 4,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _titleController,
-                    decoration: InputDecoration(
-                      labelText: 'Başlık',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      prefixIcon: const Icon(Icons.title),
-                      filled: true,
-                      fillColor: Colors.grey[50],
-                    ),
-                    validator:
-                        (value) =>
-                            value == null || value.isEmpty
-                                ? 'Zorunlu alan'
-                                : null,
-                  ),
-                  const SizedBox(height: 16),
-                  TextFormField(
-                    controller: _contentController,
-                    decoration: InputDecoration(
-                      labelText: 'İçerik',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      prefixIcon: const Icon(Icons.article),
-                      filled: true,
-                      fillColor: Colors.grey[50],
-                    ),
-                    maxLines: 10,
-                    validator:
-                        (value) =>
-                            value == null || value.isEmpty
-                                ? 'Zorunlu alan'
-                                : null,
-                  ),
-                  const SizedBox(height: 24),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: _submit,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: softColor,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        textStyle: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      child: Text(isEditing ? 'Güncelle' : 'Kaydet'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+        centerTitle: true,
+        title: Text(
+          isEditing ? 'Makale Düzenle' : 'Yeni Makale Oluştur',
+          style: const TextStyle(
+            color: primaryColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
+        backgroundColor: cardColor,
+        elevation: 1,
+        iconTheme: const IconThemeData(color: primaryColor),
       ),
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            // baslik
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 12.0,
+              ),
+              child: _buildTitleField(
+                controller: _titleController,
+                isEditing: isEditing,
+              ),
+            ),
+
+            // icerik
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: _buildContentField(controller: _contentController),
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      // Floating Action Button
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _submit,
+        icon: Icon(isEditing ? Icons.save_rounded : Icons.add_circle_outline),
+        label: Text(isEditing ? 'Güncelle' : 'Kaydet'),
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        elevation: 6,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+    );
+  }
+
+  // baslik alani
+  Widget _buildTitleField({
+    required TextEditingController controller,
+    required bool isEditing,
+  }) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: isEditing ? 'Makale Başlığı' : 'Başlık',
+        hintStyle: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.grey.shade400,
+        ),
+        // sınırları kaldır
+        border: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        contentPadding: EdgeInsets.zero,
+      ),
+      style: const TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.black87,
+      ),
+      maxLines: 1,
+    );
+  }
+
+  // icerik alani
+  Widget _buildContentField({required TextEditingController controller}) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: 'Makale içeriğinizi buraya yazın...',
+        hintStyle: TextStyle(
+          fontSize: 17,
+          color: Colors.grey.shade500,
+          height: 1.6,
+        ),
+        // sınırları kaldırma
+        border: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        contentPadding: EdgeInsets.zero,
+      ),
+      style: TextStyle(fontSize: 17, color: Colors.grey.shade800, height: 1.6),
+      keyboardType: TextInputType.multiline,
+      maxLines: null, // Sayfanın tümünü kullan
     );
   }
 }

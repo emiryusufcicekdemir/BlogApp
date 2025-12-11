@@ -21,13 +21,15 @@ class ArticleAdapter extends TypeAdapter<Article> {
       title: fields[1] as String,
       content: fields[2] as String,
       date: fields[3] as DateTime,
+      isFavorite: fields[5] as bool?,
+      updatedAt: fields[4] as DateTime?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Article obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -35,7 +37,11 @@ class ArticleAdapter extends TypeAdapter<Article> {
       ..writeByte(2)
       ..write(obj.content)
       ..writeByte(3)
-      ..write(obj.date);
+      ..write(obj.date)
+      ..writeByte(4)
+      ..write(obj.updatedAt)
+      ..writeByte(5)
+      ..write(obj.isFavorite);
   }
 
   @override

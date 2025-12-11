@@ -15,10 +15,20 @@ class Article extends HiveObject {
   @HiveField(3)
   final DateTime date;
 
+  @HiveField(4)
+  DateTime? updatedAt;
+
+  @HiveField(5)
+  bool? isFavorite;
+
   Article({
     required this.id,
     required this.title,
     required this.content,
     required this.date,
-  });
+    bool? isFavorite,
+    DateTime? updatedAt,
+  }) :
+   isFavorite = isFavorite ?? false,
+   updatedAt = updatedAt ?? date;
 }
